@@ -102,7 +102,6 @@ class embedd_model:
 
 
 
-
   
 
 processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")  #code source https://huggingface.co/transformers/v4.6.0/_modules/transformers/models/wav2vec2/modeling_wav2vec2.html,  forward function
@@ -115,6 +114,7 @@ embedded_model = embedd_model(processor, model)
 df = embedded_model.complete_embedding(current_directory, '/home/subhajit/asvspoofing_2019_la/LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.dev.trl.txt')
 df.to_csv("dev.csv", index = False)
 
+#Adjust the file locations as needed
 
 
 
