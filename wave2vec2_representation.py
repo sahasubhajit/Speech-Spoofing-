@@ -34,7 +34,7 @@ class embedd_model:
 
     print("Audio file is converted to float type array of shape {}".format(float_array.shape))
     input_values = self.processor(float_array, return_tensors="pt").input_values  # Batch size 1
-    hidden_states = self.model(input_values).last_hidden_state
+    hidden_states = self.model(input_values).last_hidden_state    #embedding from the last hiddem layer
 
     return hidden_states
 
