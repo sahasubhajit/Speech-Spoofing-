@@ -5,6 +5,7 @@ A [basic lecture video for self supervised learning](https://www.youtube.com/wat
 
 Download ASVspoof 2019 dataset from [here](https://datashare.ed.ac.uk/handle/10283/3336).
 
-wave2vec2_representation.py code to get feature embedding by wave2vec 2.0 pretrained model. Adjust the file/directory path to read from train/validation/test dataset and write to designated csv file. 
+wave2vec2_representation.py code to get feature embedding by wave2vec 2.0 pretrained model. Adjust the file/directory path to read from train/validation/test dataset and write to designated csv file.
+Or you may directly get the embedding of [train](https://drive.google.com/file/d/1s5FteLqqMvqCZrjCxG3wOWhbkiIgbyX_/view?usp=sharing), [test](https://drive.google.com/file/d/1s5FteLqqMvqCZrjCxG3wOWhbkiIgbyX_/view?usp=sharing), [validation](https://drive.google.com/file/d/1sO88GHIM_T4FLD-szl3e-Olw6jCwN3pf/view?usp=sharing) datasets in csv format.
 
 
