@@ -5,7 +5,7 @@ A [basic lecture video for self supervised learning](https://www.youtube.com/wat
 
 Download ASVspoof 2019 dataset from [here](https://datashare.ed.ac.uk/handle/10283/3336). Run 
 ```
-pip install -r requirements. txt
+pip install -r requirements.txt
 ```
 in your terminal to install all required packages.
 
