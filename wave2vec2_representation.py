@@ -5,6 +5,7 @@ import soundfile as sf
 import os
 import torch
 import pandas as pd
+import numpy as np
 
 
 
@@ -14,10 +15,12 @@ import pandas as pd
 
 class embedd_model:
 
-  def __init__(self, processor, model, pooling = False):
+  def __init__(self, processor, model, intermediate_embedding_layer = False, layer_index = False, pooling = False):
     self.processor = processor
     self.model = model
     self.pooling = pooling
+    self.intermediate_embedding_layer = intermediate_embedding_layer
+    self.layer_index = layer_index
 
 
   def audio_to_representation(self, audio_file_path):
@@ -34,9 +37,18 @@ class embedd_model:
 
     print("Audio file is converted to float type array of shape {}".format(float_array.shape))
     input_values = self.processor(float_array, return_tensors="pt").input_values  # Batch size 1
-    hidden_states = self.model(input_values).last_hidden_state    #embedding from the last hiddem layer
 
-    return hidden_states
+    if self.intermediate_embedding_layer:
+      try:
+        hidden_state = self.model(input_values).hidden_states[self.layer_index]
+      except:
+        print("################# Check the hidden layer index #################")  
+        exit(1)
+    else:
+      hidden_state = self.model(input_values).last_hidden_state
+
+
+    return hidden_state
 
 
   def extract_label(self, txt_file_path):  #function to make a table of each file data labeling
@@ -64,7 +76,7 @@ class embedd_model:
       self.y = pd.DataFrame(columns = ['label'])
 
     for file_name in file_names:
-      #if count == 10:
+      #if count == 50:
       #  break
       count += 1
       print("id {}th file {} is processing ____________________________________".format(count, file_name))
@@ -90,7 +102,9 @@ class embedd_model:
           recorded_audio_list.append(file_name)
           print("################# got label #################")
         except:
+          print("id {}th file {} is not processed ____________________________________".format(count, file_name))
           df.drop(df.index[-1], inplace=True)  #if the label for an input file not found then ignore it
+          #break
 
     if get_label:
       self.y.reset_index(drop=True, inplace=True)
@@ -102,22 +116,17 @@ class embedd_model:
 
 
 
+
+if __name__ == "__main__":
+
+  processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")  #code source https://huggingface.co/transformers/v4.6.0/_modules/transformers/models/wav2vec2/modeling_wav2vec2.html,  forward function
+  model = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base-960h", output_attentions=True, output_hidden_states=True)
+
+  # Get the current directory
+  current_directory = os.getcwd()
   
-
-processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")  #code source https://huggingface.co/transformers/v4.6.0/_modules/transformers/models/wav2vec2/modeling_wav2vec2.html,  forward function
-model = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base-960h")
-
-# Get the current directory
-current_directory = os.getcwd()
-
-embedded_model = embedd_model(processor, model)
-df = embedded_model.complete_embedding(current_directory, '/home/subhajit/asvspoofing_2019_la/LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.dev.trl.txt')
-df.to_csv("dev.csv", index = False)
-
-#Adjust the file locations as needed
-
-
-
-
-
-
+  intermediate_embedding_layer = True
+  layer_index = 3
+  embedded_model = embedd_model(processor, model, intermediate_embedding_layer = intermediate_embedding_layer, layer_index = layer_index)
+  df = embedded_model.complete_embedding(current_directory, '/home/subhajit/asvspoofing_2019_la/LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.eval.trl.txt')
+  df.to_csv("/home/subhajit/asvspoofing_2019_la/LA/eval_embeddings/eval_intermediate_embedding_layer_"+str(intermediate_embedding_layer)+"_layer_index"+str(layer_index)+".csv", index = False)
