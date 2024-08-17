@@ -16,7 +16,7 @@ Or you may directly get the embedding of [train](https://drive.google.com/file/d
 
 [flop_count_2.py](https://github.com/sahasubhajit/Speech-Spoofing-/blob/main/flop_count_2.py) computes GMAC.
 
-If you find our work helpful in your research please cite our paper as
+If you find our work helpful in your research please cite our paper by
 
 ```
 @misc{saha2024exploringgreenaiaudio,
