@@ -14,6 +14,8 @@ Or you may directly get the embedding of [train](https://drive.google.com/file/d
 
 [ml_models.ipynb](https://github.com/sahasubhajit/Speech-Spoofing-/blob/main/ml_models.ipynb) contains the implementation of all the ML models on the embedded reprsentation of ASVspoof 2019 dataset. 
 
+[flop_count_2.py](https://github.com/sahasubhajit/Speech-Spoofing-/blob/main/flop_count_2.py) computes GMAC.
+
 
 
 
