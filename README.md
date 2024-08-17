@@ -16,6 +16,22 @@ Or you may directly get the embedding of [train](https://drive.google.com/file/d
 
 [flop_count_2.py](https://github.com/sahasubhajit/Speech-Spoofing-/blob/main/flop_count_2.py) computes GMAC.
 
+If you find our work helpful in your research please cite our paper as
+
+```
+@misc{saha2024exploringgreenaiaudio,
+      title={Exploring Green AI for Audio Deepfake Detection}, 
+      author={Subhajit Saha and Md Sahidullah and Swagatam Das},
+      year={2024},
+      eprint={2403.14290},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2403.14290}, 
+}
+```
+
+
+
 
 
 
