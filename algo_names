@@ -1,7 +1,0 @@
-Algorithm names for extracting speech layers (primary models)
-
-1. Wave2Vec2.0
-2. WavLM
-3. HuBERT
-
-Pretrained Model weights can be downloaded from HuggingFace or fairseq (meta AI)
