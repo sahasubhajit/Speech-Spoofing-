@@ -1,4 +1,5 @@
 # Speech-Spoofing-
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/exploring-green-ai-for-audio-deepfake/voice-anti-spoofing-on-asvspoof-2019-la)](https://paperswithcode.com/sota/voice-anti-spoofing-on-asvspoof-2019-la?p=exploring-green-ai-for-audio-deepfake)
 A Machine Learning project aimed for a countermeasures of speech spoofing. 
 
 A [basic lecture video for self supervised learning](https://www.youtube.com/watch?v=6N3OAWIsUOU).
