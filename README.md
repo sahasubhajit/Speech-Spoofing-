@@ -1,4 +1,4 @@
-# Exploring Green AI for Audio Deepfake Detection 
+# 📄 Exploring Green AI for Audio Deepfake Detection 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/exploring-green-ai-for-audio-deepfake/voice-anti-spoofing-on-asvspoof-2019-la)](https://paperswithcode.com/sota/voice-anti-spoofing-on-asvspoof-2019-la?p=exploring-green-ai-for-audio-deepfake)
 
 
