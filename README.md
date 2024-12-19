@@ -7,7 +7,7 @@ A Machine Learning project aimed for a countermeasures of speech spoofing 🤖.
 
 A [basic lecture video for self supervised learning](https://www.youtube.com/watch?v=6N3OAWIsUOU).
 
-Download ASVspoof 2019 dataset from [here](https://datashare.ed.ac.uk/handle/10283/3336). Run 
+Download ASVspoof 2019 dataset from [here](https://datashare.ed.ac.uk/handle/10283/3336). Run ⚡️ 
 ```
 pip install -r requirements.txt
 ```
@@ -19,7 +19,7 @@ in your terminal to install all required packages.
 
 [flop_count_2.py](https://github.com/sahasubhajit/Speech-Spoofing-/blob/main/flop_count_2.py) computes GMAC.
 
-If you find our work helpful in your research please cite our paper by
+If you find our work helpful in your research please cite our paper by 🔗
 
 ```
 @misc{saha2024exploringgreenaiaudio,
